@@ -1,0 +1,39 @@
+$navbar-color: black;
+*{
+    box-sizing: border-box;
+    margin: 0; 
+}
+
+body{
+    margin: 0; 
+    
+}
+
+.intro {
+    margin-left: 3.5rem;
+    padding: 1rem;
+  }
+
+.navbar {
+    width: 3.5rem;
+    height: 100vh;
+    background-color: $navbar-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+ 
+
+    .navbar__link {
+        text-decoration: none;
+        list-style: none;
+        color: white;
+        margin-bottom: 1rem;
+        &:last-child{
+            margin-bottom: auto; 
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+}

@@ -1,10 +1,15 @@
 import React from 'react';
-import './App.css';
+import './styles/app.scss';
+import Navbar from './components/Navbar';
+import Intro from './components/Intro';
 
 function App() {
   return (
+    
     <div className="App">
-      <h1>Hello</h1>
+     
+      <Navbar/>
+      <Intro/>
     </div>
   );
 }
