@@ -8,10 +8,11 @@ body{
     margin: 0; 
     
 }
-
-.intro {
+.global {
     margin-left: 3.5rem;
     padding: 1rem;
+    // padding-top: 600rem;
+    
   }
 
 .navbar {
@@ -36,4 +37,16 @@ body{
             left: 0;
         }
     }
+}
+
+.skill-list {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(2 ,1fr);
+    gap: 0.5rem 2rem;
+}
+
+
+.about-desc {
+    max-width: 50rem;
 }
