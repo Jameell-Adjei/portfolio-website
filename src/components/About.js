@@ -21,7 +21,6 @@ const About = () => {
                 <li className='skill-list__item'>Express</li>
                 <li className='skill-list__item'>Node.js</li>
 
-
             </ul>
         </div>
     )
