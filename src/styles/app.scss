@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500&display=swap');
+
 $navbar-color: black;
 $transition-speed: 0.8s;
 $transition-anim: ease;
@@ -7,8 +9,9 @@ $transition-anim: ease;
 }
 
 body{
-    margin: 0; 
-    
+    margin: 0;      
+    font-family: 'Zilla Slab', serif;
+
 }
 .global {
     margin-left: 3.5rem;
@@ -62,6 +65,8 @@ body{
 .navbar__link--text{
     opacity: 0;
     transition: opacity  $transition-speed $transition-anim;
+    text-align: center;
+    // overflow-wrap: anywhere;
 }
 
 .navbar__link:hover{
@@ -88,7 +93,19 @@ body{
     gap: 0.5rem 2rem;
 }
 
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    gap: 0.5rem;
 
+}
+
+.project-grid__item{
+    background-color: lightpink;
+    border-radius: 0.5rem;
+    width: 20rem;
+    height: 20rem;
+}
 .about-desc {
     max-width: 50rem;
 }
