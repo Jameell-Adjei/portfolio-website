@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500&display=swap');
 
-$navbar-color: black;
+$navbar-color: darken(#09054a , 5%);
 $transition-speed: 0.8s;
 $transition-anim: ease;
+$large-text: 2.5rem;
+
+:root {
+    color: #dee3ed;
+    
+}
 *{
     box-sizing: border-box;
     margin: 0; 
+    // padding: 0;
 }
 
 body{
@@ -17,14 +24,14 @@ body{
     margin-left: 3.5rem;
     padding: 4rem;
     // padding-top: 6rem;
-    background: #ff00ee;
-    
+    background: #09054a;
+
   }
 
 .navbar {
     width: 3.5rem;
     height: 100vh;
-    background-color: $navbar-color;
+    background-color:$navbar-color;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +48,7 @@ body{
         color: white;
         margin-bottom: 1rem;
         &:last-child{
-            margin-bottom: auto; 
+            // margin-bottom: auto; 
             position: absolute;
             bottom: 0;
             left: 0;
@@ -70,21 +77,24 @@ body{
 }
 
 .navbar__link:hover{
-    background-color: lighten($navbar-color, 30%);
-    padding: 0.1rem;
-    border-radius: 5px;
+    background-color: lighten($navbar-color, 40%);
+    padding: 0.1rem 0;
+    //border-radius: 5px;
  
     
     > svg{
-        fill: yellow;
+        // fill: yellow;
         filter: drop-shadow(0px 0px 6px red); 
     }
 }
 .navbar__link:hover{
     > .navbar__link--text{
         opacity: 1;
+        filter: drop-shadow(0px 0px 6px red);
     }
 }
+
+
 
 .skill-list {
     display: grid;
@@ -93,19 +103,85 @@ body{
     gap: 0.5rem 2rem;
 }
 
+.skill-list__item::before{
+    color: white;
+    content: ' - ';
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3 , 1fr);
-    gap: 0.5rem;
+    gap: 3rem;
+   
 
 }
 
 .project-grid__item{
-    background-color: lightpink;
+    background-color: #09054a;
     border-radius: 0.5rem;
     width: 20rem;
     height: 20rem;
+    box-shadow: 0px 0px 10px #dee3ed;
+  //  display: flex;    //This fixed issue w/ github svg for some reason
+    flex-direction: column;
+    justify-content: center;
+    transition: box-shadow 1s ease;
+    text-decoration: none;
+    color:#dee3ed;
+    p {
+        margin-bottom: auto; 
+     }
+    h1, p {
+       text-align: center; 
+    }
+
+    a {
+        text-decoration: none;
+        color: #dee3ed;
+    }
+    &:hover {
+        box-shadow: rgba(222, 227, 237, 0.56) 0px 22px 70px 4px;
+        // box-shadow: 0px 0px 20px #dee3ed;
+        // box-shadow: rgba(222, 227, 237, 0.4) 5px 5px, rgba(222, 227, 237, 0.3) 10px 10px, rgba(222, 227, 237, 0.2) 15px 15px, rgba(222, 227, 237, 0.1) 20px 20px, rgba(222, 227, 237, 0.05) 25px 25px;
+    }
+}
+.project-grid__item--title {
+    padding-bottom: 2rem;
+}
+.project__main-header {
+    padding-bottom: 3rem;
 }
 .about-desc {
     max-width: 50rem;
+}
+
+.intro {
+    h1 {
+        font-size: $large-text;
+    }
+    p{
+        font-size: 2rem;
+    }
+}
+.intro__button {
+    background-color: #09054a;
+    color:#dee3ed;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+    border: #dee3ed solid 0.1rem;
+    font-family: 'Zilla Slab', serif;
+    height: 50px;
+    width: 100px;
+
+    margin-top: 3rem;
+    transition: all 0.4s ease;
+    &:hover{
+
+        // 
+        // transition: height 2.4s ease;
+        font-weight: bold;
+        font-size: 15px;
+        color: #09054a;
+        background-color: rgba(222, 227, 237, 0.7);
+    }
 }
