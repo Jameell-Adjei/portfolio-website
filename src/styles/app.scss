@@ -7,6 +7,7 @@ $large-text: 2.5rem;
 
 :root {
     color: #dee3ed;
+    background: #09054a;
     
 }
 *{
@@ -21,78 +22,55 @@ body{
 
 }
 .global {
-    margin-left: 3.5rem;
+   // margin-left: 3.5rem;
     padding: 4rem;
     // padding-top: 6rem;
-    background: #09054a;
-
   }
 
-.navbar {
-    width: 3.5rem;
-    height: 100vh;
-    background-color:$navbar-color;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: fixed;
- 
+  .navbar{
+      background-color: #09054a;
+      height: 3.5rem;
+      width: 100vw;
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-    .navbar__link {
-        transition: all  $transition-speed $transition-anim;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        list-style: none;
-        color: white;
-        margin-bottom: 1rem;
-        &:last-child{
-            // margin-bottom: auto; 
-            position: absolute;
-            bottom: 0;
-            left: 0;
+      svg {
+          margin: 1rem;
+      }
+
+      .navbar__items {
+
+        .navbar__items--link{
+            margin: 1.9rem;
+            font-size: 1.2rem;
+            text-decoration: none;
+            position: relative;
         }
+      }
+  }
 
-
-    }
-}
-
-.navbar__link {
-    svg {
-        fill: white;
-        width: 70%;
-        height: 70%;
-        transition: all $transition-speed $transition-anim;
-    }
-
-}
-
-
-.navbar__link--text{
-    opacity: 0;
-    transition: opacity  $transition-speed $transition-anim;
-    text-align: center;
-    // overflow-wrap: anywhere;
-}
-
-.navbar__link:hover{
-    background-color: lighten($navbar-color, 40%);
-    padding: 0.1rem 0;
-    //border-radius: 5px;
- 
-    
-    > svg{
-        // fill: yellow;
-        filter: drop-shadow(0px 0px 6px red); 
-    }
-}
-.navbar__link:hover{
-    > .navbar__link--text{
-        opacity: 1;
-        filter: drop-shadow(0px 0px 6px red);
-    }
-}
+  .navbar__items--link::after{
+      content: '';
+      width: 0%;
+      height: 0.25rem;
+     background: #d53369;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #cbad6d, #d53369);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #cbad6d, #d53369); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      ; 
+      position: absolute; 
+      top: 20px;
+      bottom: 0%;
+      left: 50%;
+      margin-top: 5px;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+  }
+  .navbar__items--link:hover::after{
+    left: 0%;
+    width: 100%;
+  }
 
 
 
@@ -122,7 +100,7 @@ body{
     width: 20rem;
     height: 20rem;
     box-shadow: 0px 0px 10px #dee3ed;
-  //  display: flex;    //This fixed issue w/ github svg for some reason
+  //display: flex;    //This fixed issue w/ github svg for some reason
     flex-direction: column;
     justify-content: center;
     transition: box-shadow 1s ease;
@@ -141,8 +119,6 @@ body{
     }
     &:hover {
         box-shadow: rgba(222, 227, 237, 0.56) 0px 22px 70px 4px;
-        // box-shadow: 0px 0px 20px #dee3ed;
-        // box-shadow: rgba(222, 227, 237, 0.4) 5px 5px, rgba(222, 227, 237, 0.3) 10px 10px, rgba(222, 227, 237, 0.2) 15px 15px, rgba(222, 227, 237, 0.1) 20px 20px, rgba(222, 227, 237, 0.05) 25px 25px;
     }
 }
 .project-grid__item--title {
@@ -163,6 +139,9 @@ body{
         font-size: 2rem;
     }
 }
+
+
+
 .intro__button {
     background-color: #09054a;
     color:#dee3ed;
