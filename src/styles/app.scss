@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500&display=swap');
 
-$navbar-color: darken(#09054a , 5%);
+$navbar-color: #09054a/*darken(#09054a , 5%)*/;
 $transition-speed: 0.8s;
 $transition-anim: ease;
 $large-text: 2.5rem;
@@ -28,14 +28,15 @@ body{
   }
 
   .navbar{
-      background-color: #09054a;
+      top: 0;
+      background-color: $navbar-color;
       height: 3.5rem;
       width: 100vw;
       position: fixed;
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+    transition: all 0.5s ease-in-out;
       svg {
           margin: 1rem;
       }
@@ -50,7 +51,11 @@ body{
         }
       }
   }
-
+.nav-scrolled{
+    $navbar-color: black;
+    background-color: $navbar-color;
+    box-shadow: 0 4px 2px -2px white;
+}
   .navbar__items--link::after{
       content: '';
       width: 0%;
@@ -77,7 +82,7 @@ body{
 .skill-list {
     display: grid;
     list-style: none;
-    grid-template-columns: repeat(2 ,1fr);
+    grid-template-columns: repeat(2 ,0.5fr);
     gap: 0.5rem 2rem;
 }
 
@@ -155,9 +160,6 @@ body{
     margin-top: 3rem;
     transition: all 0.4s ease;
     &:hover{
-
-        // 
-        // transition: height 2.4s ease;
         font-weight: bold;
         font-size: 15px;
         color: #09054a;
