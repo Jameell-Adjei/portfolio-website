@@ -1,9 +1,12 @@
 import React from 'react';
-
+import { useOnViewport } from '../helperFuncs';
 const About = () => {
+
+
+    useOnViewport({rootMargin: '0px 0px 0px 0px', threshold: 0.6}, '.about-section', 'anime');
     return (
-        <div className='global'>
-            <h1>Temp data</h1>
+        <section className='global about-section' id='about-section'>
+            <h1 className='about__title'>About Me</h1>
             <p className='about-desc'>
             Currently, I mainly focuing on creating (and sometimes designing) websites 
             and applications that are easy to use and that are able to fulfill a cilent or company's needs.
@@ -22,7 +25,7 @@ const About = () => {
                 <li className='skill-list__item'>Node.js</li>
 
             </ul>
-        </div>
+        </section>
     )
 }
 

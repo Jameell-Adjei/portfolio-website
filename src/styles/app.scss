@@ -4,12 +4,20 @@ $navbar-color: #09054a/*darken(#09054a , 5%)*/;
 $transition-speed: 0.8s;
 $transition-anim: ease;
 $large-text: 2.5rem;
+$defaultPadding: 8rem;
 
 :root {
     color: #dee3ed;
     background: #09054a;
+    font-family: 'Zilla Slab', serif;
+
     
 }
+// .name{
+//     display: flex;
+//     justify-content: space-between;
+//     margin: 0 20rem;
+// }
 *{
     box-sizing: border-box;
     margin: 0; 
@@ -18,12 +26,10 @@ $large-text: 2.5rem;
 
 body{
     margin: 0;      
-    font-family: 'Zilla Slab', serif;
-
+    
 }
 .global {
-   // margin-left: 3.5rem;
-    padding: 4rem;
+    padding: 8rem 4rem;
     // padding-top: 6rem;
   }
 
@@ -37,6 +43,7 @@ body{
       justify-content: space-between;
       align-items: center;
     transition: all 0.5s ease-in-out;
+    z-index: 3;
       svg {
           margin: 1rem;
       }
@@ -48,6 +55,7 @@ body{
             font-size: 1.2rem;
             text-decoration: none;
             position: relative;
+            color: #dee3ed;
         }
       }
   }
@@ -59,10 +67,10 @@ body{
   .navbar__items--link::after{
       content: '';
       width: 0%;
-      height: 0.25rem;
+      height: 0.105rem;
      background: #d53369;  /* fallback for old browsers */
       background: -webkit-linear-gradient(to right, #cbad6d, #d53369);  /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(to right, #cbad6d, #d53369); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right,  #cbad6d, #d53369); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       ; 
       position: absolute; 
       top: 20px;
@@ -90,11 +98,13 @@ body{
     color: white;
     content: ' - ';
 }
-
+.project-container {
+    opacity: 0;
+}
 .project-grid {
     display: grid;
     grid-template-columns: repeat(3 , 1fr);
-    gap: 3rem;
+    gap: 2rem;
    
 
 }
@@ -105,16 +115,14 @@ body{
     width: 20rem;
     height: 20rem;
     box-shadow: 0px 0px 10px #dee3ed;
-  //display: flex;    //This fixed issue w/ github svg for some reason
-    flex-direction: column;
-    justify-content: center;
+
     transition: box-shadow 1s ease;
     text-decoration: none;
     color:#dee3ed;
     p {
-        margin-bottom: auto; 
+        margin: 1rem 1rem auto 1rem; 
      }
-    h1, p {
+    h1 {
        text-align: center; 
     }
 
@@ -126,18 +134,28 @@ body{
         box-shadow: rgba(222, 227, 237, 0.56) 0px 22px 70px 4px;
     }
 }
-.project-grid__item--title {
-    padding-bottom: 2rem;
-}
+// .project-grid__item--title {
+//     padding-bottom: 2rem;
+// }
 .project__main-header {
     padding-bottom: 3rem;
+}
+
+.about-section {
+    padding: $defaultPadding 4rem;
+    opacity: 0;
 }
 .about-desc {
     max-width: 50rem;
 }
+.about__title {
+    font-size: $large-text;
+}
 
 .intro {
-    h1 {
+    padding: 12rem 4rem;
+    opacity: 0;
+    .intro__main--header {
         font-size: $large-text;
     }
     p{
@@ -145,8 +163,9 @@ body{
     }
 }
 
-
-
+.intro__main--name {
+    font-size: 6.3rem;
+}
 .intro__button {
     background-color: #09054a;
     color:#dee3ed;
@@ -164,5 +183,102 @@ body{
         font-size: 15px;
         color: #09054a;
         background-color: rgba(222, 227, 237, 0.7);
+    }
+}
+
+.contact-section {
+    opacity: 0;
+}
+.contact-section__title {
+    padding-bottom: 0.5rem;
+    font-size: $large-text;
+}
+
+.contact-section__desc {
+    max-width: 65ch;
+}
+
+.contact-section__link {
+    //text-decoration: none;
+    color:  #30C530;
+    position: relative;
+    //border-bottom: 1px solid floralwhite;
+    transition: all 0.5s;
+
+    &:hover{
+        text-decoration-color: #dee3ed;
+        color:#dee3ed;
+        //font-size: 20rem;
+    }
+}
+.footer {
+    background-color: black;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    svg {
+        fill: white;
+        width: 40px;
+        height: 40px;
+    }
+
+
+}
+
+.footer__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #dee3ed;
+    
+    &:hover {
+        > span{
+            opacity: 1;
+        }
+    }
+    span {
+        opacity: 0;
+        transition: all 0.5s ease;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+// animation classes
+
+
+.anime{
+    position: relative;
+    z-index: 1;
+    animation: test 900ms linear;
+    opacity: 1;
+}
+
+.anime2{
+    animation: test2 900ms linear;
+}
+@keyframes test {
+    0%{
+        transform: translate(-5rem);
+        opacity: 0;
+    }
+
+    25%{
+        transform: translate(-2rem);
+        opacity: 0.1;
+    }
+
+    50%{
+        transform: translate(-1rem);
+        opacity: 0.4;
+    }
+
+    100%{
+        transform: translate(0);
+        opacity: 1;
     }
 }
