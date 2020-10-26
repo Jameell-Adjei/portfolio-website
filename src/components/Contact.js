@@ -3,7 +3,7 @@ import { useOnViewport } from '../helperFuncs'
 const Contact = () => {
 
 
-    useOnViewport({rootMargin: '0px 0px 0px 0px', threshold: 0.8}, '.contact-section', 'anime');
+    useOnViewport({rootMargin: '0px 0px -100px 0px', threshold: 0.4}, '.contact-section', 'animate');
     return (
         <section className='global contact-section' id='contact'>
             <h1 className='contact-section__title'>Getting in Touch with me</h1>

@@ -1,4 +1,4 @@
-import React , {useRef} from 'react';
+import React from 'react';
 
 const Navbar = () => {
 
@@ -21,7 +21,7 @@ const Navbar = () => {
                   <span className=''>Home</span>
               </a>
               <a className='navbar__items--link' href="#about-section"  rel="noopener noreferrer">
-                  <span>About Me</span>
+                  <span>About</span>
               </a>
 
               <a className='navbar__items--link' href="#projects"  rel="noopener noreferrer">   
@@ -38,4 +38,5 @@ const Navbar = () => {
     
     )
 }
+
 export default Navbar;
