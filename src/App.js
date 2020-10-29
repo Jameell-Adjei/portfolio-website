@@ -17,9 +17,9 @@ function App() {
   return (
     
     <div className="App">
-      <CustomPreloader time={3500}background='#09054a'>
+      {/* <CustomPreloader time={3500}background='#09054a'>
         <Logo/>
-      </CustomPreloader>     
+      </CustomPreloader>      */}
       <Navbar/>
       <Intro/>
       <About/>

@@ -4,7 +4,6 @@ import { useOnScreen } from '../helperFuncs';
 const Intro = () => {
     const introRef = useRef(null);
  
-    const clicked = () => console.log(introRef.current.classList);
     useOnScreen(introRef, {rootMargin: "-40% 0px 0px 0px"}, '.navbar', 'nav-scrolled', true);
 
 
