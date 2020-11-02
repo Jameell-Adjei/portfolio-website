@@ -25,7 +25,7 @@ function App() {
       <Contact/>
       <Footer/>
 
-      <CustomPreloader time={3500}background='#09054a'>
+      <CustomPreloader time={3500}background='#000000'>
         <Logo/>
       </CustomPreloader>
     </div>
