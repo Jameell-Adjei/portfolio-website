@@ -9,7 +9,6 @@ const ProjectItem = ({title , desc, link}) => {
             <div >
                     <h1 className='project-grid__item--title'>{title}</h1>
                     <p>{desc}</p>
-
             </div>
        </a>
     )

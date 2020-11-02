@@ -23,7 +23,7 @@ body{
 }
 .global {
     padding: 8rem 4rem;
-  }
+}
 
   .navbar{
     top: 0;
@@ -36,7 +36,9 @@ body{
     align-items: center;
     transition: all 0.5s ease;
     z-index: 3;
-    svg {
+    .navbar__logo {
+        display: inline-block;
+        height: 2.25rem;
         margin: 1rem;
     }
 
@@ -85,7 +87,11 @@ body{
   padding-top: 2rem;
 
   .skill-list__item{
-    font-size: clamp(1rem, 1.2vw, 3rem);
+    font-size: calc(max(1rem, min(1.2vw, 3rem)));    
+    @supports(font-size: clamp(1rem, 1.2vw, 3rem)) {
+      font-size: clamp(1rem, 1.2vw, 3rem);
+    }
+    
   }
 }
 
@@ -106,9 +112,16 @@ body{
 
 .project-grid__item{
   background-color: $background-color;
-  border-radius: 0rem;
-  width: clamp(10vw , 20rem, 26rem);
-  height: clamp(10vw , 23rem, 30rem);
+  //border-radius: 0rem;
+
+
+
+  width: calc(max(10vw, min(20rem , 26rem)));
+  height: calc(max(10rem, min(23rem , 30rem)));
+  @supports(height: clamp(10vw , 23rem, 30rem)) {
+    width: clamp(10vw , 20rem, 26rem);
+    height: clamp(10vw , 23rem, 30rem);
+  }
   box-shadow: 0px 0px 10px $text-color;
 
   transition: all 1s ease;
@@ -116,7 +129,12 @@ body{
   color:$text-color;
   p {
       margin: 1rem 1rem auto 1rem; 
-      font-size: clamp(1.3rem , 1.1vw, 1.5rem);
+
+
+      font-size: calc(max(1.3rem, min(1.1vw, 1.5rem)));    
+      @supports(font-size: clamp(1.3rem, 1.1vw, 1.5rem)) {
+        font-size: clamp(1.3rem, 1.2vw, 1.5rem);
+      }
    }
   h1 {
      text-align: center; 
@@ -133,7 +151,13 @@ body{
 
 .project__main-header {
   padding-bottom: 8rem;
-  font-size: clamp(2rem, 2vw, 12rem);
+
+  font-size: calc(max(2rem, min(2vw, 12rem))); 
+
+  @supports(font-size: clamp(2rem, 2vw, 12rem)){
+    font-size: clamp(2rem, 2vw, 12rem);
+  }
+  
 }
 
 .about-section {
@@ -142,10 +166,20 @@ body{
 }
 .about-desc {
   max-width: 65ch;
-  font-size: clamp(1rem, 1.2vw, 8rem);
+
+  font-size: calc(max(1rem, min(1.2vw , 8rem)));
+  @supports(font-size: clamp(1rem, 1.2vw, 8rem)) {
+    font-size: clamp(1rem, 1.2vw, 8rem);
+  }
+  
 }
 .about__title {
-  font-size: clamp(3rem, 3vw, 12rem);
+  font-size: calc(max(2rem, min(2vw, 12rem))); 
+
+  @supports(font-size: clamp(3rem, 3vw, 12rem)) {
+    font-size: clamp(3rem, 3vw, 12rem);
+  }
+  
 }
 
 .intro {
@@ -156,15 +190,28 @@ body{
   flex-direction: column;
   justify-content: center;
   .intro__main--header {
-      font-size: clamp(2rem , 3vw, 12rem);
+      font-size: calc(max(2rem, min(3vw, 12rem)));
+
+      @supports(font-size: clamp(2rem , 3vw, 12rem)){
+        font-size: clamp(2rem , 3vw, 12rem);
+      }
   }
   .intro__desc{
-      font-size: clamp(1rem, 1.8vw, 10rem);
+      font-size: calc(max(1rem, min(1.8vw, 10rem)));
+
+      @supports(font-size: clamp(1rem, 1.8vw, 10rem)){
+        font-size: clamp(1rem, 1.8vw, 10rem);
+      }
   }
 }
 
 .intro__main--name {
-  font-size: clamp(6.3rem , 5vw, 12rem);
+  font-size: calc(max(6.3rem, min(5vw, 12rem)));
+
+  @supports(font-size: clamp(6.3rem, 15vw, 12rem)){
+    font-size: clamp(6.3rem, 5vw, 12rem);
+  }
+  
 }
 
 
@@ -173,12 +220,23 @@ body{
 }
 .contact-section__title {
   padding-bottom: 0.5rem;
-  font-size: clamp(2rem, 2vw, 12rem);
+  
+
+  font-size: calc(max(2rem, min(2vw, 12rem)));
+
+  @supports(font-size: clamp(2rem, 2vw, 12rem)){
+    font-size: clamp(2rem, 2vw, 12rem);
+  }
 }
 
 .contact-section__desc {
   max-width: 65ch;
-  font-size: clamp(1rem, 1.2vw, 8rem);
+  font-size: calc(max(1rem, min(1.2vw , 8rem)));
+  @supports(font-size: clamp(1rem, 1.2vw, 8rem)) {
+    font-size: clamp(1rem, 1.2vw, 8rem);
+  }
+
+
 }
 
 .contact-section__link {
@@ -228,8 +286,8 @@ body{
       }
   }
 }
-// animation classes
 
+// animation classes
 .animate{
   position: relative;
   z-index: 1;
@@ -261,7 +319,6 @@ body{
 }
 
 // media queries
-
 @media screen and (max-device-width: 1440px) and (orientation: landscape){
   .navbar__items--link::after{
     content: none;
@@ -443,7 +500,7 @@ body{
 
   }
   .navbar {
-    svg{
+    svg {
       height: 2rem;
       width: 1.2rem;
     }

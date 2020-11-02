@@ -10,9 +10,8 @@ export function useOnViewport(options, elementClassName, newClass){
     const observer = new IntersectionObserver(
       ([entry]) => {
 
-        if(/*entry.intersectionRatio >= 0.9 &&*/ entry.isIntersecting){
+        if(entry.isIntersecting){
           element.classList.add(newClass);
-          console.log("intersected " + entry.intersectionRatio + " " + element.classList)
         } 
       },
       options
@@ -39,20 +38,16 @@ export function useOnScreen(ref, options, elementClassName, newClass, removed) {
        const currentRef = ref.current;
        const element = document.querySelector(elementClassName);
 
-     console.log(ref.current , element);
       const observer = new IntersectionObserver(
         ([entry]) => {
-            console.log(element)
           // Update our state when observer callback fires
           setIntersecting(entry.isIntersecting);
 
         if (!entry.isIntersecting) {
           element.classList.add(newClass);
-        //  console.log(entry.intersectionRatio + " not intersected" + element)
+
         } else if (entry.isIntersecting && element.classList.contains(newClass) && removed){
-        //  console.log(entry.intersectionRatio + " intersected")
           element.classList.remove(newClass);
-        //  console.log( element.classList)
         }
 
         },

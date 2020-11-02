@@ -10,9 +10,9 @@ const About = () => {
             <h1 className='about__title'>About Me</h1>
             <p className='about-desc'>
             Currently, I am mainly focuing on creating (and sometimes designing) websites 
-            and applications that are easy to use and that are able to fulfill a cilent or company's needs.
+            and applications that are easy to use and that are able to fulfill a client or company's needs.
             The list below contains some of skills I learned over the years that pertain to web development.
-            For a more deeper look into my skill set you can take a look at my resume   <a href={pdf} target='_blank' rel="noopener noreferrer" className='contact-section__link'>here</a>.
+            For a more deeper look into my skill set you can take a look at my resume  <a href='https://jameell-adjei.github.io/portfolio-website/static/media/Resume.119d6830.pdf' target='_blank' rel="noopener noreferrer" className='contact-section__link'>here</a>. Also, below in the footer there will be links to other places where you can learn more about me and my work.
             </p>
 
             <ul className='skill-list'>

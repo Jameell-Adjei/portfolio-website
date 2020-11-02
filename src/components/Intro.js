@@ -9,7 +9,7 @@ const Intro = () => {
 
  
     return (
-        <div className='global intro'id='intro__header' ref={introRef} onClick={clicked}>
+        <div className='global intro'id='intro__header' ref={introRef}>
             <h1 className='intro__main--header' >Hello there, I'm ...</h1>
             <h1 className='intro__main--name'>Jameell</h1>
             <h1 className='intro__main--header'>and I build applications that run on the web.</h1>
