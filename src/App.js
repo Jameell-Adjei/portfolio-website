@@ -17,9 +17,7 @@ function App() {
   return (
     
     <div className="App">
-      {/* <CustomPreloader time={3500}background='#09054a'>
-        <Logo/>
-      </CustomPreloader>      */}
+     
       <Navbar/>
       <Intro/>
       <About/>
@@ -27,6 +25,9 @@ function App() {
       <Contact/>
       <Footer/>
 
+      <CustomPreloader time={3500}background='#09054a'>
+        <Logo/>
+      </CustomPreloader>
     </div>
   );
 }
