@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
       
         <nav className='navbar'>
-          <a href="/"  className='navbar__logo'>
+          <a href="https://jameell-adjei.github.io/portfolio-website/"  className='navbar__logo'>
               <svg width="32px" height="36px"   viewBox="0 0 32 36" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
                 <desc>Created with Lunacy</desc>
                 <g id="Group-2" transform="translate(2.5 2.5)">

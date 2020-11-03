@@ -61,8 +61,6 @@ export function useOnScreen(ref, options, elementClassName, newClass, removed) {
         observer.unobserve(currentRef);
       };
     }, []); 
-    
-    //return isIntersecting;
   }
 
 

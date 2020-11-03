@@ -1,13 +1,11 @@
 import React , {useRef} from 'react';
-import { useOnScreen , useOnViewport} from '../helperFuncs';
+import { useOnScreen } from '../helperFuncs';
 
 const Intro = () => {
     const introRef = useRef(null);
  
     useOnScreen(introRef, {rootMargin: "-40% 0px 0px 0px"}, '.navbar', 'nav-scrolled', true);
-    useOnViewport({rootMargin: '0px 0px 0px 0px', threshold: 0.6}, '.intro', 'animate');
 
- 
     return (
         <div className='global intro'id='intro' ref={introRef}>
             <h1 className='intro__main--header' >Hello there, I'm ...</h1>
