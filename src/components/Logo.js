@@ -11,6 +11,7 @@ useEffect(() => {
     translateY: 0,
   });
 
+
   const animation = anime.timeline({
     easing: 'easeOutExpo',
     delay: 200,
@@ -52,6 +53,7 @@ useEffect(() => {
 }, [])
 
     return (
+      <div className='art'>
         <svg width="177px" className='blah' height="188px" viewBox="0 0 177 188" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
           <desc>Created with Lunacy</desc>
           <g id="Group" transform="translate(7.5 7.5)">
@@ -64,6 +66,7 @@ useEffect(() => {
             </g>
           </g>
         </svg>
+        </div> 
     )
 }
 

@@ -1,15 +1,15 @@
 import React , {useRef} from 'react';
-import { useOnScreen } from '../helperFuncs';
+import { useOnScreen , useOnViewport} from '../helperFuncs';
 
 const Intro = () => {
     const introRef = useRef(null);
  
     useOnScreen(introRef, {rootMargin: "-40% 0px 0px 0px"}, '.navbar', 'nav-scrolled', true);
-
+    useOnViewport({rootMargin: '0px 0px 0px 0px', threshold: 0.6}, '.intro', 'animate');
 
  
     return (
-        <div className='global intro'id='intro__header' ref={introRef}>
+        <div className='global intro'id='intro' ref={introRef}>
             <h1 className='intro__main--header' >Hello there, I'm ...</h1>
             <h1 className='intro__main--name'>Jameell</h1>
             <h1 className='intro__main--header'>and I build applications that run on the web.</h1>

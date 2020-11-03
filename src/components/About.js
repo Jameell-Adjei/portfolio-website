@@ -1,6 +1,6 @@
 import React from 'react';
 import { useOnViewport } from '../helperFuncs';
-import pdf from '../static_files/Resume.pdf'
+
 const About = () => {
 
 
