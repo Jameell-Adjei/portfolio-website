@@ -16,7 +16,7 @@ const ProjectItem = ({title , desc, link}) => {
 ProjectItem.propTypes = {
     title: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
+    link: PropTypes.string,
 }
 
 export default ProjectItem;
